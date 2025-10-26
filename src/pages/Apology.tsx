@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import FloatingSticker from "@/components/FloatingSticker";
-import MusicPlayer from "@/components/MusicPlayer";
 import stickerBear from "@/assets/sticker-bear.png";
 import stickerStar from "@/assets/sticker-star.png";
 import stickerHeart from "@/assets/sticker-heart.png";
 import stickerCloud from "@/assets/sticker-cloud.png";
 
 const Apology = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [showMessage, setShowMessage] = useState(false);
+  
+  const { recipients = "Pipu & Pipi", sender = "dobi", message = "Maafin aku ya kalau ada salah kata atau perbuatan yang bikin kalian nggak nyaman atau sedih..." } = location.state || {};
 
   useEffect(() => {
     const timer = setTimeout(() => setShowMessage(true), 500);
@@ -18,7 +22,6 @@ const Apology = () => {
     <div className="min-h-screen relative overflow-hidden" style={{
       background: "linear-gradient(135deg, hsl(15 100% 75%), hsl(45 100% 80%), hsl(350 100% 85%))"
     }}>
-      <MusicPlayer />
       
       {/* Decorative floating stickers */}
       <div className="fixed top-10 left-10 opacity-60">
@@ -54,8 +57,7 @@ const Apology = () => {
             
             <div className="space-y-6 text-center text-foreground">
               <p className="text-xl md:text-2xl leading-relaxed">
-                Kepada <span className="font-bold text-primary">Pipu</span> dan{" "}
-                <span className="font-bold text-primary">Pipi</span> yang tersayang...
+                Kepada <span className="font-bold text-primary">{recipients}</span> yang tersayang...
               </p>
               
               <div className="my-8 flex justify-center gap-4">
@@ -65,26 +67,36 @@ const Apology = () => {
               </div>
 
               <p className="text-lg md:text-xl leading-relaxed">
-                Aku <span className="font-bold text-secondary">dobi</span>, mau minta maaf banget 🙏
+                Aku <span className="font-bold text-secondary">{sender}</span>, mau minta maaf banget 🙏
               </p>
               
               <p className="text-lg md:text-xl leading-relaxed">
-                Maafin dobi pliss, dobi semalam ketiduran karna nunggu upload repository 💔
+                {message} 💔
               </p>
 
               <div className="bg-accent/20 rounded-2xl p-6 my-8">
                 <p className="text-lg md:text-xl font-medium leading-relaxed">
-                  Semoga diterima ya maafnya mwah mwah mwah! ✨
+                  Aku janji akan lebih baik lagi dan lebih perhatian! ✨
                 </p>
               </div>
 
               <p className="text-lg md:text-xl leading-relaxed">
-                Terimakasih yawww 💕
+                Kalian berdua itu special banget buat aku 💕
               </p>
 
               <p className="text-lg md:text-xl leading-relaxed font-semibold text-primary">
-                Maafkan aku ya, Pipu & Pipi! 🌟
+                Maafkan aku ya, {recipients}! 🌟
               </p>
+            </div>
+
+            {/* Edit Button */}
+            <div className="text-center mt-8">
+              <button
+                onClick={() => navigate("/")}
+                className="text-sm text-muted-foreground hover:text-primary transition-colors underline"
+              >
+                ✏️ Edit Pesan
+              </button>
             </div>
 
             {/* Bottom decorative stickers */}
@@ -98,7 +110,7 @@ const Apology = () => {
           {/* Footer message */}
           <div className="text-center mt-8">
             <p className="text-white text-lg md:text-xl font-medium drop-shadow-lg">
-              Dari: dobi yang menyesal 🐻
+              Dari: {sender} yang menyesal 🐻
             </p>
           </div>
         </div>
