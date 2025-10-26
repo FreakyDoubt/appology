@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import FloatingSticker from "@/components/FloatingSticker";
-import MusicPlayer from "@/components/MusicPlayer";
 import stickerBear from "@/assets/sticker-bear.png";
 import stickerStar from "@/assets/sticker-star.png";
 import stickerHeart from "@/assets/sticker-heart.png";
@@ -18,8 +17,6 @@ const Apology = () => {
     <div className="min-h-screen relative overflow-hidden" style={{
       background: "linear-gradient(135deg, hsl(15 100% 75%), hsl(45 100% 80%), hsl(350 100% 85%))"
     }}>
-      <MusicPlayer />
-      
       {/* Decorative floating stickers */}
       <div className="fixed top-10 left-10 opacity-60">
         <FloatingSticker src={stickerStar} alt="Star sticker" size="sm" />
@@ -69,17 +66,17 @@ const Apology = () => {
               </p>
               
               <p className="text-lg md:text-xl leading-relaxed">
-                Maafin dobi pliss, dobi semalam ketiduran karna nunggu upload repository 💔
+                Maafin dobi pliss, semalem ketiduran karna nungguin upload repository lama sekali💔
               </p>
 
               <div className="bg-accent/20 rounded-2xl p-6 my-8">
                 <p className="text-lg md:text-xl font-medium leading-relaxed">
-                  Semoga diterima ya maafnya mwah mwah mwah! ✨
+                  Semoga maafnya diterima ✨
                 </p>
               </div>
 
               <p className="text-lg md:text-xl leading-relaxed">
-                Kalian berdua itu special banget buat aku 💕
+                Thank uuuu 💕
               </p>
 
               <p className="text-lg md:text-xl leading-relaxed font-semibold text-primary">
