@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import backgroundMusic from "@/assets/background-music.mp3";
 
 const MusicPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -39,7 +40,7 @@ const MusicPlayer = () => {
       <audio
         ref={audioRef}
         loop
-        src="https://assets.mixkit.co/music/preview/mixkit-dreaming-big-31.mp3"
+        src={backgroundMusic}
       />
     </div>
   );
