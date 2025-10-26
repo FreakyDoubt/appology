@@ -69,18 +69,17 @@ const Apology = () => {
               </p>
               
               <p className="text-lg md:text-xl leading-relaxed">
-                Maafin aku ya kalau ada salah kata atau perbuatan yang bikin kalian 
-                nggak nyaman atau sedih... 💔
+                Maafin dobi pliss, dobi semalam ketiduran karna nunggu upload repository 💔
               </p>
 
               <div className="bg-accent/20 rounded-2xl p-6 my-8">
                 <p className="text-lg md:text-xl font-medium leading-relaxed">
-                  Aku janji akan lebih baik lagi dan lebih perhatian! ✨
+                  Semoga diterima ya maafnya mwah mwah mwah! ✨
                 </p>
               </div>
 
               <p className="text-lg md:text-xl leading-relaxed">
-                Kalian berdua itu special banget buat aku 💕
+                Terimakasih yawww 💕
               </p>
 
               <p className="text-lg md:text-xl leading-relaxed font-semibold text-primary">
