@@ -1,12 +1,23 @@
+import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import FloatingSticker from "@/components/FloatingSticker";
 import stickerStar from "@/assets/sticker-star.png";
 import stickerHeart from "@/assets/sticker-heart.png";
 import stickerCloud from "@/assets/sticker-cloud.png";
+import backgroundMusic from "@/assets/background-music.mp3";
 
 const Landing = () => {
   const navigate = useNavigate();
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const handleOpenMessage = () => {
+    if (audioRef.current) {
+      audioRef.current.volume = 0.3;
+      audioRef.current.play();
+    }
+    navigate("/pesan");
+  };
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
@@ -64,13 +75,15 @@ const Landing = () => {
             <FloatingSticker src={stickerHeart} alt="Heart" size="sm" delay />
           </div>
 
-          <button
-            onClick={() => navigate("/pesan")}
-            className="group relative inline-flex items-center justify-center px-8 py-4 text-xl md:text-2xl font-bold text-white bg-primary rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 hover:bg-secondary hover:text-foreground"
+          <Button
+            size="lg"
+            onClick={handleOpenMessage}
+            className="text-xl px-12 py-8 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-2xl hover:scale-105 transition-transform"
           >
-            <span className="relative z-10">Buka Pesan 💕</span>
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          </button>
+            Buka Pesan 💌
+          </Button>
+          
+          <audio ref={audioRef} loop src={backgroundMusic} />
 
           <p className="mt-8 text-sm text-muted-foreground">
             Dari: seseorang yang ingin minta maaf ✨
