@@ -71,7 +71,7 @@ const Apology = () => {
 
               <div className="bg-accent/20 rounded-2xl p-6 my-8">
                 <p className="text-lg md:text-xl font-medium leading-relaxed">
-                  Semoga maafnya diterima ✨
+                  Semoga maafnya diterima yaa mwah mwah mwah ✨
                 </p>
               </div>
 
